@@ -60,11 +60,11 @@ export const getAllAppUsers = async (req: Request, res: Response) => {
 /// Get one
 export const getAppUser = async (req: Request, res: Response) => {
 
-    const { id }=   req.params
+    const { id } = req.params
     
     try {
         
-        const appUser = await AppUserModel.findOne( id )
+        const appUser = await AppUserModel.findOne({ id })
 
         res.status(HTTP_CODES.OK).json({
             message: 'fetch all app users ',
