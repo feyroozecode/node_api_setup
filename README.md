@@ -1,5 +1,5 @@
    # node_api_setup
-A NodeJs Base App for Good Setup of NodeJs using Typescript with MongoDb Projects based on Good practices 
+A NodeJs Base App to get Started a new NodeJs Project using Typescript with MongoDb,  based on Good practices , so all good contributions is welcome thank you . 
 Use usgin thoses packages : 
 - express.js => https://www.npmjs.com/package/express
 - mongoose   => https://www.npmjs.com/package/mongoose
