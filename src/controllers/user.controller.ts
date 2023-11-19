@@ -22,7 +22,7 @@ export const createAppUser = async (req: Request, res: Response) => {
         await AppUserModel.create({
             userName, lastName, age, email, role, password, 
         }).then((appuser: any) => {
-            res.status(HTTP_CODES.OK).json({
+            res.status(HTTP_CODES.CREATED).json({
                 message: 'AppUser created successfully',
                 datas: appuser
             })
@@ -64,11 +64,36 @@ export const getAppUser = async (req: Request, res: Response) => {
     
     try {
         
-        const appUser = await AppUserModel.findOne({ id })
+        const appUser = await AppUserModel.findOne( id )
 
         res.status(HTTP_CODES.OK).json({
             message: 'fetch all app users ',
             data: appUser
+        })
+
+    }catch (error: any) {
+        res.status(HTTP_CODES.BAD_REQUEST).json({
+            message: 'Error fetch app user',
+            error: error.message
+        })
+    }
+}
+
+
+// udpate app user
+export const updateAppUser = async (req: Request, res: Response) => {
+
+    const { id } = req.params
+
+    const {userName, lastName, age, email, password, role} = req.body;
+    
+    try {
+        
+        const newAppUser = await AppUserModel.findOneAndUpdate({ id })
+
+        res.status(HTTP_CODES.CREATED).json({
+            message: 'update a app users ',
+            data: newAppUser
         })
 
     }catch (error: any) {

@@ -1,1 +1,0 @@
-import { DB_DATAS } from "../static_datas/db_datas";
