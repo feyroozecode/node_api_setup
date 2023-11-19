@@ -64,7 +64,7 @@ export const getAppUser = async (req: Request, res: Response) => {
     
     try {
         
-        const appUser = await AppUserModel.findOne( id )
+        const appUser = await AppUserModel.findById( id )
 
         res.status(HTTP_CODES.OK).json({
             message: 'fetch all app users ',
@@ -89,7 +89,7 @@ export const updateAppUser = async (req: Request, res: Response) => {
     
     try {
         
-        const newAppUser = await AppUserModel.findOneAndUpdate({ id })
+        const newAppUser = await AppUserModel.findByIdAndUpdate{ id })
 
         res.status(HTTP_CODES.CREATED).json({
             message: 'update a app users ',
@@ -103,3 +103,6 @@ export const updateAppUser = async (req: Request, res: Response) => {
         })
     }
 }
+
+
+// delete 
