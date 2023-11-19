@@ -89,7 +89,7 @@ export const updateAppUser = async (req: Request, res: Response) => {
     
     try {
         
-        const newAppUser = await AppUserModel.findByIdAndUpdate{ id })
+        const newAppUser = await AppUserModel.findByIdAndUpdate( id )
 
         res.status(HTTP_CODES.CREATED).json({
             message: 'update a app users ',
